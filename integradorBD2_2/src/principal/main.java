@@ -1,20 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package principal;
 
-
-/**
- *
- * @author slacker
- */
 public class main {
     public static void main(String[] args) {
+        //System.out.println("Carro{"+"Placa= "+"NBZT1"+", Precio= "+99000+", Seminuevo= "+"si"+", Color= Brown"+", Modelo= "+"Tird"+", Marca= "+"yes"+", Year= "+1997+"}");        
         //login
         inicioSesion login = new inicioSesion();
-        login.setVisible(true);
+        login.setVisible(false);
     
         //admin
         menuPrincipal admin = new menuPrincipal();
@@ -32,6 +23,25 @@ public class main {
         actualizarCoche actualizar = new actualizarCoche();
         actualizar.setVisible(false);
         
+        splash sp = new splash();
+        sp.setVisible(true);
+        
+        //login
+        inicioSesion login1 = new inicioSesion();
+        login.setVisible(false);
+        
+        try {
+            for (int i = 0; i < 101 ; i++) {
+                if(i==100){
+                    login.setVisible(true);
+                    sp.setVisible(false);
+                }
+                Thread.sleep(15);
+                sp.jLabel3.setText(Integer.toString(i));
+                sp.jProgressBar1.setValue(i);
+            }
+        } catch (Exception e) {
+        }
         
     }
     
